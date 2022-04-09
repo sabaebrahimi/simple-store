@@ -1,0 +1,7 @@
+.product-list-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 80%;
+    gap: 3em;
+    margin: 2em 0;
+}

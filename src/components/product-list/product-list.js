@@ -1,7 +1,7 @@
 import React from "react";
-import ProductCard from "./product-card";
-import productData from '../data.json';
-
+import ProductCard from "../product-card/product-card";
+import productData from "../../data.json";
+import "./product-list.css";
 
 export default class ProductList extends React.Component {
   state = {
@@ -10,12 +10,11 @@ export default class ProductList extends React.Component {
 
   componentDidMount() {
     this.setState({ productList: productData.data });
-
   }
 
   render() {
     return (
-      <div>
+      <div className="product-list-wrapper">
         {this.state.productList.map((product) => (
           <ProductCard
             key={product.id}
