@@ -49,6 +49,7 @@ export default class DetailPage extends React.Component {
           <Modal
             show={this.state.showModal}
             onCloseClick={() => this.setState({ showModal: false })}
+            details={this.state.product.detail}
           />
         </section>
       </div>

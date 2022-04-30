@@ -10,7 +10,7 @@ const StoreButton = (props) => (
       width: props.width ?? "100%",
       height: props.height ?? "100%"
     }}
-    className="store-button"
+    className={`${props.className} store-button`}
   >
     {props.text}
     {props.icon && <FontAwesomeIcon className="icon-style" icon={props.icon} />}
