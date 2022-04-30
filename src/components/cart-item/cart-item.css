@@ -1,0 +1,17 @@
+.cart-item-wrapper {
+    display: flex;
+    gap: 5em;
+    align-items: center;
+    background: white;
+    padding: 5px 40px;
+    border-radius: 4px;
+}
+
+.close-button-container {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 100px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+}

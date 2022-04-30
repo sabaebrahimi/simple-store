@@ -23,6 +23,10 @@ export default class DetailPage extends React.Component {
     });
   }
 
+  buyProduct = () => {
+    store.dispatch({type: "ADD_CART_ITEM", cartItem: this.state.product});
+  }
+
   render() {
     return (
       <div className="details-wrapper">
@@ -38,6 +42,7 @@ export default class DetailPage extends React.Component {
               icon={faShoppingCart}
               backgroundColor={"#27AE60"}
               height={40}
+              onClick={this.buyProduct}
             />
           </div>
           <StoreButton
