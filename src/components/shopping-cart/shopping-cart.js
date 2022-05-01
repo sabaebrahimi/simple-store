@@ -5,11 +5,13 @@ import CartItem from "../cart-item/cart-item";
 import StoreButton from "../store-button/store-button";
 import { removeAllItems } from "../../actions/cart-action";
 import "./shopping-cart.css";
+import CartPopup from "../cart-popup/cart-popup";
 
 export default class ShoppingCart extends React.Component {
   state = {
     cartItems: [],
     totalPrice: 0,
+    showPopup: false,
   };
 
   calculateTotalPrice(items) {
@@ -36,6 +38,7 @@ export default class ShoppingCart extends React.Component {
 
   onRemoveIconClickHandler = (productItemId) => {
     store.dispatch({ type: "REMOVE_CART_ITEM", cartItemId: productItemId });
+    this.setState({showPopup: true});
   };
 
   onCheckoutClickHandler = () => {
@@ -67,6 +70,14 @@ export default class ShoppingCart extends React.Component {
           height={40}
           width={100}
           onClick={() => this.onCheckoutClickHandler()}
+        />
+
+        <CartPopup
+          show={this.state.showPopup}
+          text={"You removed item from cart"}
+          background={"#ff8181"}
+          color={"#fff"}
+          onCloseClick={() => this.setState({ showPopup: false })}
         />
       </div>
     );

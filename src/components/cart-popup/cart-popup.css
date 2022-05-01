@@ -1,0 +1,10 @@
+.cart-popup-wrapper {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    left: 15px;
+    padding: 0 10px;
+    border-radius: 2px;
+}
