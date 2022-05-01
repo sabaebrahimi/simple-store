@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./store-button.css";
 
 const StoreButton = (props) => (
+  <div style={{position: 'relative'}}>
   <button
     onClick={props.onClick}
     style={{
@@ -15,6 +16,8 @@ const StoreButton = (props) => (
     {props.text}
     {props.icon && <FontAwesomeIcon className="icon-style" icon={props.icon} />}
   </button>
+  {props.number ? <span className="number-circle">{props.number}</span> : null}
+  </div>
 );
 
 export default StoreButton;

@@ -4,6 +4,8 @@ const cartReducer = (state = [], action) => {
       return state.concat(action.cartItem);
     case "REMOVE_CART_ITEM":
         return state.filter(item => item.id != action.cartItemId);
+    case "REMOVE_ALL_ITEMS": 
+        return [];
     case "RETURN_CART_ITEMS":
       return state;
     default:

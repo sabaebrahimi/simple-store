@@ -1,5 +1,6 @@
 .shopping-cart-wrapper {
     margin: 2em 0;
+    width: 80%;
 }
 
 .total-text {
@@ -11,4 +12,5 @@
 .no-item {
     font-size: 30px;
     font-weight: 600;
+    text-align: center;
 }

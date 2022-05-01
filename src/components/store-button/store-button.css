@@ -8,3 +8,16 @@
 .icon-style {
     margin-left: 7px;
 }
+
+.number-circle {
+    position: absolute;
+    z-index: 100;
+    background: #eee;
+    border-radius: 100px;
+    right: -5px;
+    top: -5px;
+    display: flex;
+    align-items: center;
+    padding: 2px 8px;
+    justify-content: center;
+}

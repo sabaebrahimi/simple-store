@@ -3,6 +3,7 @@ import { returnCartItems } from "../../actions/cart-action";
 import store from "../../reducers/index";
 import CartItem from "../cart-item/cart-item";
 import StoreButton from "../store-button/store-button";
+import { removeAllItems } from "../../actions/cart-action";
 import "./shopping-cart.css";
 
 export default class ShoppingCart extends React.Component {
@@ -37,6 +38,10 @@ export default class ShoppingCart extends React.Component {
     store.dispatch({ type: "REMOVE_CART_ITEM", cartItemId: productItemId });
   };
 
+  onCheckoutClickHandler = () => {
+    store.dispatch(removeAllItems);
+  };
+
   render() {
     return (
       <div className="shopping-cart-wrapper">
@@ -60,6 +65,8 @@ export default class ShoppingCart extends React.Component {
           text={"Checkout"}
           backgroundColor={"#2D9CDB"}
           height={40}
+          width={100}
+          onClick={() => this.onCheckoutClickHandler()}
         />
       </div>
     );
