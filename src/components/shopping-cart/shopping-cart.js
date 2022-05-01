@@ -2,6 +2,7 @@ import React from "react";
 import { returnCartItems } from "../../actions/cart-action";
 import store from "../../reducers/index";
 import CartItem from "../cart-item/cart-item";
+import StoreButton from "../store-button/store-button";
 import "./shopping-cart.css";
 
 export default class ShoppingCart extends React.Component {
@@ -16,7 +17,7 @@ export default class ShoppingCart extends React.Component {
       total += element.price;
     });
     return total;
-  };
+  }
 
   componentDidMount() {
     store.dispatch(returnCartItems);
@@ -32,6 +33,10 @@ export default class ShoppingCart extends React.Component {
     });
   }
 
+  onRemoveIconClickHandler = (productItemId) => {
+    store.dispatch({ type: "REMOVE_CART_ITEM", cartItemId: productItemId });
+  };
+
   render() {
     return (
       <div className="shopping-cart-wrapper">
@@ -42,15 +47,20 @@ export default class ShoppingCart extends React.Component {
               title={cartItem.title}
               price={cartItem.price}
               id={cartItem.id}
+              onClick={() => this.onRemoveIconClickHandler(cartItem.id)}
             />
           ))
         ) : (
-          <p>No Cart Item</p>
+          <p className="no-item">No Cart Item</p>
         )}
 
         <p className="total-text">Total: R$ {this.state.totalPrice}</p>
 
-
+        <StoreButton
+          text={"Checkout"}
+          backgroundColor={"#2D9CDB"}
+          height={40}
+        />
       </div>
     );
   }

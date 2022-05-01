@@ -9,9 +9,15 @@ export default class Navbar extends React.Component {
     return (
       <nav className="navbar">
         <ul>
-          <li>All Products</li>
-          <li>Smartphones</li>
-          <li>Notebooks</li>
+          <Link to="/?filter=none" style={{ textDecoration: "none" }}>
+            <li>All Products</li>
+          </Link>
+          <Link to="/?filter=smartphone" style={{ textDecoration: "none" }}>
+            <li>Smartphones</li>
+          </Link>
+          <Link to="/?filter=notebook" style={{ textDecoration: "none" }}>
+            <li>Notebooks</li>
+          </Link>
           <li>
             <Link to="/cart">
               <StoreButton

@@ -6,7 +6,7 @@ const CartItem = (props) => (
     <div className="cart-item-wrapper">
         <p>{props.title}</p>
         <p>R$ {props.price}</p>
-        <span className="close-button-container"><FontAwesomeIcon icon={faClose} /></span>
+        <span className="close-button-container" onClick={props.onClick}><FontAwesomeIcon icon={faClose} /></span>
     </div>
 );
 
